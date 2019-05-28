@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-//connect to Mongodb Atlas
-// console.log(process.env.DATABASE_URL);
+
 
 mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/Project-Two',
 { useNewUrlParser: true }
