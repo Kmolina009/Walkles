@@ -9,7 +9,4 @@ function index(req, res, next){
         name:req.query.name,
         sortKey
     }
-    //
-    //if user is a walker redirect to walker/index
-    //if user is User, redirect to user/index
 };
