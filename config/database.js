@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 //connect to Mongodb Atlas
-process.env.DATABASE_URL
+// console.log(process.env.DATABASE_URL);
 
-mongoose.connect('mongodb://localhost:3000/Project-Two',
-{useNewURLParser: true}
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/Project-Two',
+{ useNewUrlParser: true }
 );
 
-mongoose.connection.on(connection, () => {
-    console.log("Connected to Mongodb")
-})
+var db = mongoose.connection;
+
+db.on('connected', function (){
+    console.log(`Connected to Mongodb at ${db.host}:${db.port}`)
+});
+
+db.on('error', (error) => console.log(error));

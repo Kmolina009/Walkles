@@ -2,31 +2,34 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var sessions =require('express-session');
-car passport = require('passport');
+var session =require('express-session');
+var passport = require('passport');
 var logger = require('morgan');
+var app = express();
+
+require('dotenv').config()
+require('./config/database');
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var app = express();
-require=('./config/database')
-var passport =require('./config/passport')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');``
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express({
-  secret:'Bork Bork',
+app.use(session({
+  secret:'Bark',
   resave:false,
-  saveUnininitialized:true
+  saveUninitialized: true
 }));
-app.use(passpor.initialize());
-app.use(seesion());
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(passport.initialize());
+app.use(passport.session())
 
 
 app.use('/', indexRouter);
