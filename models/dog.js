@@ -1,6 +1,6 @@
 const mongoose= require('mongoose')
 const userSchema = require('./user')
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const dogSchema = new Schema ({
     name:{

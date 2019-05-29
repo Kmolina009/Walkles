@@ -13,7 +13,9 @@ const walkSchema = new Schema ({
     dog:{
         type:[ObjectId],
         required: true
-    }}, {
+    },
+    date:Date
+}, {
         timestamp:true
     });
 
