@@ -1,7 +1,6 @@
 const mongoose= require('mongoose');
 
 const Schema = mongoose.Schema;
-
 const userSchema = new Schema ({
     name:{
         type:String,
@@ -18,7 +17,7 @@ const userSchema = new Schema ({
         type:Boolean,
         default:false
     },
-    googleId:{type:String}
+    googleId: String
      });
 
 module.exports= mongoose.model('User', userSchema)

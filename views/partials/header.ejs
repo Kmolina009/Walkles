@@ -1,19 +1,27 @@
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rokkitt&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rokkitt&display=swap" rel="stylesheet">
 </head>
-<style>
-div{
-    background: rgb(0, 191, 255);
-    height: 30vh;
-    font-family: 'Permanent Marker', sans-serif;
-}
-p{
-    font-size: 20vh;
-    text-decoration: none;
-}
-</style>
-<div>  
-    <a href="/user">
+
+
+
+<div class="header">
+    <a href="/"></a>
     <p>Walkles</p>
-    </a>
+        <nav class="log-bar">
+           <a href="">Find Walks</a>
+           <a href="">My Walks</a>
+           <a href="">My Dogs</a>
+           <a href="">Profile</a>
+           <ul>
+             <li>
+             <%if (user) {%>
+              <a href="/logout">Log Out</a>
+              <%} else {%>
+               <a href="/auth/google">Login with Google</a>
+                <%}%> 
+              </li>
+              </ul> 
+        </nav>
+        <span class="service-bar">
+    </div>
 </div>

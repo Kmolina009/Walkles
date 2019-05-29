@@ -1,13 +1,11 @@
 var Dog = require('./model/dog');
 
 module.exports = {
-    new:newDog/*,
-    removeDog,
-    updateDog*/
-
+    new:newDog,
+    removeDog
 }
 
-function addDog(req, res){
+function newDog(req, res){
 
     Dog.create(req.body, function(err, dog){
         Dog.save( err => {
@@ -15,6 +13,18 @@ function addDog(req, res){
             return res.status(200).send(addDog)
 
         })
-        res.redirect('../veiws/user/newdog')
+        res.redirect('../veiws/index')
     });
+};
+
+function removeDog(req, res){
+    Dog.findByIdAndRemove(req.params.dogId,(err, dog) =>{
+        if (err) return res.status(500).send(err);
+        const response ={
+            message: "Successfully Delete!",
+            id: dog._id
+        };
+        return res.status(200).send(removeDog)
+    });
+
 };
