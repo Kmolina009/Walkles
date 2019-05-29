@@ -1,4 +1,5 @@
 const mongoose= require('mongoose');
+const Dog = require('../models/dog')
 
 const Schema = mongoose.Schema;
 const userSchema = new Schema ({
@@ -11,7 +12,8 @@ const userSchema = new Schema ({
         required:true
             },
     dog:{
-        type:Array
+        type: Schema.Types.ObjectId, 
+        ref: "Dog"
         },
     Walker:{
         type:Boolean,

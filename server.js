@@ -35,7 +35,7 @@ app.use(passport.session())
 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
-app.use('/user', dogsRouter);
+app.use('/', dogsRouter);
 
 
 // catch 404 and forward to error handler

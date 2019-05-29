@@ -4,14 +4,22 @@ module.exports = {
     newDog,
     removeDog,
     updateDog,
-    showAllDog,
+    index,
     showOneDog
 }
 
 function newDog(req, res) {
     // mongo db query
-    // redirect to view via URL
-};
+    let newDog = new Dog(req.body);
+        newDog.save((err, dog) => {
+            if (err) {
+            res.send(err);
+            } else {
+            console.log(res.json(dog))
+            res.redirect('/dog/index')
+            }
+        })
+}
 
 function removeDog(req, res) {
      // mongo db query
@@ -23,10 +31,12 @@ function updateDog(req, res) {
     // redirect to view via URL
 };
 
-function showAllDog(req, res ) {
+function index(req, res ) {
  // mongo db query
+
+
+ };
     // redirect to view via URL
-};
 
 function showOneDog(req, res ) {
  // mongo db query
