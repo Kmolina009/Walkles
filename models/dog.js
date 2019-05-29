@@ -1,5 +1,5 @@
 const mongoose= require('mongoose')
-const userSchema = require('./user')
+// const userSchema = require('./user')
 const Schema = mongoose.Schema;
 
 const dogSchema = new Schema ({
@@ -11,9 +11,8 @@ const dogSchema = new Schema ({
         type:String,
         required:true
     },
-    owner:[userSchema],
-    date:Date,
-    walks:Array
+    date:Date
+    // walks:Array
 });
 
 module.exports = mongoose.model("Dog", dogSchema)
