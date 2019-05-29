@@ -2,7 +2,10 @@ var Dog = require('./model/dog');
 
 module.exports = {
     new:newDog,
-    removeDog
+    removeDog,
+    updateDog,
+    showAllDog,
+    showOneDog
 }
 
 function newDog(req, res){
@@ -28,3 +31,15 @@ function removeDog(req, res){
     });
 
 };
+
+function update (req, res){
+    Dog.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new:true},
+        (err, dog) =>{
+            if(err) return res.status(500).send(err)
+            
+        }
+    )
+}
