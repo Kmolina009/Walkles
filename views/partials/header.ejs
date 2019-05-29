@@ -3,15 +3,18 @@
   <div class="header">
       <p>Walkles</p>
           <nav id="log-bar">
-            <ul>
-              <li>
-              <%if (user) {%>
-                <a href="/logout">Log Out</a>
-                <%} else {%>
-                <a href="/auth/google">Login with Google</a>
-                  <%}%> 
+            <a href="">Add Dogs</a>
+            <a href="">My Dogs</a>
+            <a href="">Profile</a>
+              <ul>
+                <li>
+                <%if (user) {%>
+                  <a href="/logout">Log Out</a>
+                  <%} else {%>
+                  <a href="/auth/google">Login with Google</a>
+                    <%}%> 
                 </li>
-                </ul> 
+              </ul> 
           </nav>
           <span class="service-bar">
       </div>
