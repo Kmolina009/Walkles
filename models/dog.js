@@ -1,12 +1,19 @@
 const mongoose= require('mongoose')
-const Schema = mongoose.schema
+const userSchema = require('./user')
+const Schema = mongoose.Schema
 
 const dogSchema = new Schema ({
-    name:String,
-    breed:String,
-    owner:ObjectId,
+    name:{
+        type:String,
+        required:true
+    },
+    breed:{
+        type:String,
+        required:true
+    },
+    owner:[userSchema],
     date:Date,
     walks:Array
-})
+});
 
-module.exports =('Dog', dogSchema)
+module.exports = mongoose.model("Dog", dogSchema)
