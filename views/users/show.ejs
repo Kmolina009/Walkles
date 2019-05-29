@@ -1,29 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Walkles</title>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rokkitt&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<% ../partials/head.ejs %>
   <body>
-    <header>
-          <ul>
-            <li>
-            <% if (user) { %>
-             <a href="/logout">Log Out</a>
-             <% } else { %>
-              <a href="/auth/google">Login with Google</a>
-               <% } %> 
-             </li>
-            </ul> 
-    </header>
-  
-    <h1>Dog "Show"</h1>
-  
+      <% ../partials/header.ejs %>
 
-    
-
-
-
+      <%../partials/footer.ejs%>
   </body>
+
 </html>
