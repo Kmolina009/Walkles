@@ -9,6 +9,8 @@ module.exports = {
       res.render('index', { 
           user : req.user ? req.user : null 
         });
+
+        
   }
 
 
