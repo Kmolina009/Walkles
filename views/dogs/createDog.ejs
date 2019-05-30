@@ -14,10 +14,10 @@
     <% include ../partials/header %>
     <div>
        <div class= "card-action">
-         <form action="/user/<%= user._id%>/dog" method="POST">
+         <form action="/users/<%=user._id%>/dogs" method="POST">
            <input type="text" name="name" placeholder="Name of dog" class="white-text" />
            <input type="text" name="breed" placeholder="Breed" class="white-text" />
-           <button type="submit class="add-btn>Add Dog</button>
+           <button type="submit" class="add-btn">Add Dog</button>
          </form>
        </div>
      </div>

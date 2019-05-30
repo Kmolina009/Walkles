@@ -3,16 +3,16 @@ const Schema = mongoose.Schema;
 
 const walkSchema = new Schema ({
     user:{
-        type:[ObjectId],
-        required:true
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     walker:{
-        type:[ObjectId],
-        required:true
-    },//walker is user, I need to create the walker boolean
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     dog:{
-        type:[ObjectId],
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'Dog'
     },
     date:Date
 }, {

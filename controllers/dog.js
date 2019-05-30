@@ -1,4 +1,6 @@
-var Dog = require('../models/dog');
+
+var Dog = require('../models/dog')
+var User = require('../models/user')
 
 module.exports = {
     newDog,
@@ -9,23 +11,16 @@ module.exports = {
 }
 
 function newDog(req, res) {
-    // mongo db query
-    console.log('req.body', req.body)
-    let newDog = new Dog(req.body);
-        newDog.save((err, dog) => {
-            if (err) {
-                console.log(err)
-                res.send(err);
-            } else {
-                console.log(dog)
-            res.redirect('/user/dog')
-            }
-        })
+    Dog.create(req.body, function(err, dog){
+        User.findByIdAndUpdate(req.user._id, {$push: {dogs: dog._id}}, {new: true}, function(err, user) {
+            res.redirect('/')
+        });
+    });
 }
 
 function removeDog(req, res) {
      // mongo db query
-    // redirect to view via URL
+    // redirect to view via URL same page, just updating with delete
 };
 
 function updateDog(req, res) {
@@ -34,9 +29,9 @@ function updateDog(req, res) {
 };
 
 function index(req, res ) {
- // mongo db query
-    
-
+    User.findById(req.user._id).populate('dogs').exec(function(err, dogOwner){
+        res.render('dogs/mydogs', {user: req.user, dogOwner})
+    })
  };
     // redirect to view via URL
 
