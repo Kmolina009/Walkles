@@ -20,15 +20,12 @@ function newDog(req, res) {
 
 function removeDog(req, res) {
      // mongo db query
-     Dog.findByIdAndDelete(req.body._id, (err) =>{
+     //ask for user(_id)
+     Dog.findByIdAndDelete(req.params._id, (err) =>{
          res.redirect('dogs/myDogs')
-     });
-    // redirect to view via URL same page, just updating with delete
-//ask for user(_id)
-//look for the user's dog(documents, sub)
-//request deletion of specified dog
-//what data is being loaded up via doginfo page
-
+         // redirect to previous page, just updating with delete
+     })
+    
 };
 
 function updateDog(req, res) {

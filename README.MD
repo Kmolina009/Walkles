@@ -1,4 +1,6 @@
-Project-Two AKA Walkles
+#Project-Two AKA Walkles
+
+![alt text](https://imgur.com/a/KZZv3dz "Walkes")
 
 Walkles. The dog walking Web App.
 
@@ -9,4 +11,7 @@ Current build allows for user to add their dogs,
 next update will allow users to submit a form that can delete or update their 
 dog's information. Followed by
 
-Technologies used: Node.js, Express, MongoDB(MEN-Stack)
+##Technologies used
+*Node.js 
+*Express 
+*MongoDB(MEN-Stack)

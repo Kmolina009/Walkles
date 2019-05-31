@@ -14,7 +14,7 @@ router.post('/users/:id/dogs', isLoggedIn , dogCtrl.newDog);
 // });
 //input name and breed.
 //push information to index?
-router.get("/dogs/:id", isLoggedIn, dogCtrl.showOneDog)
+router.get("/dogs/:id", isLoggedIn, dogCtrl.showOneDog);
  //how do I get this to render
 //creates a link for the selected dog
 router.delete('/user/:id/dogs/:id', isLoggedIn , dogCtrl.removeDog);
