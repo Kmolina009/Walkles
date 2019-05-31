@@ -1,17 +1,10 @@
 
-<%= includes ./partials/head%>
-<%= includes ./partials/header%>
+<% include ../partials/head%>
+<% include ../partials/header%>
 
-<h1>Landed!</h1>
-<%= dogOwner.dog.id{%>
-    <%= dog.%>
-    <% } %>
-//get to page
-//dog info (:id stuff, for updating and deleting)
-//HyperRef from my dogs
-//create functions(delete, then update maybe the ById variety) within dog controller
-//route to this page
-//can I insert a script?
-//test test test
+<h1><%= dog.name %></h1>
+<h1><%= dog.breed %></h1>
 
-<%= includes ./partials/footer%>
+
+
+<% include ../partials/footer %>

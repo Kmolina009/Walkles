@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const dogSchema = new Schema ({
     name:String,
     breed:String,
-    link:"/dogs/doginfo"
+
     },{ 
     timestamp:true
 });

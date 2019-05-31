@@ -14,9 +14,8 @@ router.post('/users/:id/dogs', isLoggedIn , dogCtrl.newDog);
 // });
 //input name and breed.
 //push information to index?
-router.get('/dog/myDogs',function(req, res){
-    dogCtrl.showOneDog.res.render('/dog/doginfo', {link:"<a href ='/dogs/:id/doginfo/'> class=\"btn btn primary\" role=\"button\">update</a>"});
-}); 
+router.get("/dogs/:id", isLoggedIn, dogCtrl.showOneDog)
+ //how do I get this to render
 //creates a link for the selected dog
 router.delete('/user/:id/dog/:id', isLoggedIn , dogCtrl.removeDog);
 

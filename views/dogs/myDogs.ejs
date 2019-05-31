@@ -7,6 +7,7 @@
         <tr>
             <th>Name</th>
             <th>Breed</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
@@ -14,10 +15,10 @@
             <tr>
                 <td><%= d.name %></td>
                 <td><%= d.breed %></td>
-                <td><p><%- d.link %></p></td>
+                <td> <a href="/dogs/<%= d._id%>">link</a></td>
             </tr>
             <% }) %>
-    </tbody>
+        </tbody>
 </table>
 
 

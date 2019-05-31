@@ -45,10 +45,8 @@ function index(req, res ) {
     // redirect to view via URL
 
 function showOneDog(req, res ) {
-    User.findById(req.param._id).populate('dog').exec(function(err, dogOwner){
-        res.render('dog/:id/myDogs', )
-    })
-//use for update/delete page
-    // mongo db query
-    // redirect to view via URL
-};
+    Dog.findById(req.params.id, function(err, dog){
+        console.log(dog)
+        res.render('dogs/doginfo', {dog , user: req.user});
+        });
+    }
