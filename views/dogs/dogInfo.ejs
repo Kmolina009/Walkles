@@ -1,10 +1,21 @@
 
 <% include ../partials/head%>
 <% include ../partials/header%>
-
-<h1><%= dog.name %></h1>
-<h1><%= dog.breed %></h1>
-
-
+<table>
+    <thead>
+        <th>name</th>
+        <th>breed</th>
+        <th>delete</th>
+        <th>update</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= dog.name %></td>
+            <td><%= dog.breed %></td>
+            <td><button type="submit">delete</button></td>
+            <td><button type="submit">update(coming soon)</button></td>
+        </tr>
+</tbody>
+</table>
 
 <% include ../partials/footer %>
