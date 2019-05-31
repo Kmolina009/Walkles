@@ -12,9 +12,16 @@
         <tr>
             <td><%= dog.name %></td>
             <td><%= dog.breed %></td>
-            <td><button type="submit">delete</button></td>
-            <td><button type="submit">update(coming soon)</button></td>
+                <form method="DELETE" action="/user/dogs/dogs_:id">
+                    <td>
+                        <button type="submit">delete </button>
+                    </td>
+                </form>
+            <td>
+                <button type="submit">update</button>
+            </td>
         </tr>
+               
 </tbody>
 </table>
 

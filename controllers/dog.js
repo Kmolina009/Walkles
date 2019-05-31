@@ -21,11 +21,11 @@ function newDog(req, res) {
 function removeDog(req, res) {
      // mongo db query
      //ask for user(_id)
-     Dog.findByIdAndDelete(req.params._id, (err) =>{
-         res.redirect('dogs/myDogs')
-         // redirect to previous page, just updating with delete
+     dogs.findByIdAndDelete(req.dog._id, (err) =>{
+         console.log(dog)
+         res.redirect('/')
+         // redirect to myDogs page, just updating with delete
      })
-    
 };
 
 function updateDog(req, res) {
