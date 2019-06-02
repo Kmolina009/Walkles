@@ -26,10 +26,11 @@ function removeDog(req, res) {
                 res.redirect('/')
             })
     })
+};
 //      //ask for user(_id)
 //          // redirect to myDogs page, just updating with delete
 //      })
-};
+
 
 function updateDog(req, res) {
  // mongo db query
