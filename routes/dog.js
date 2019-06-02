@@ -17,7 +17,8 @@ router.post('/users/:id/dogs', isLoggedIn , dogCtrl.newDog);
 router.get("/dogs/:id", isLoggedIn, dogCtrl.showOneDog);
  //how do I get this to render
 //creates a link for the selected dog
-router.delete("/user/dogs/:dogs_id", isLoggedIn , dogCtrl.removeDog);
+
+router.delete('/dog/:id/' , isLoggedIn , dogCtrl.removeDog);
 
 //will be set to a button, on the mydogs page
 function isLoggedIn(req, res, next){
@@ -27,5 +28,5 @@ function isLoggedIn(req, res, next){
 
   
 
-module.exports = router
+module.exports = router;
 

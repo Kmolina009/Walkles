@@ -19,13 +19,16 @@ function newDog(req, res) {
 }
 
 function removeDog(req, res) {
-     // mongo db query
-     //ask for user(_id)
-     dogs.findByIdAndDelete(req.dog._id, (err) =>{
-         console.log(dog)
-         res.redirect('/')
-         // redirect to myDogs page, just updating with delete
-     })
+//      // mongo db query
+    Dog.deleteOne( 
+        req.params.id,function(err, dog){
+            user.dog.save(function(err){
+                res.redirect('/')
+            })
+    })
+//      //ask for user(_id)
+//          // redirect to myDogs page, just updating with delete
+//      })
 };
 
 function updateDog(req, res) {
